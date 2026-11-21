@@ -1,3 +1,4 @@
 {
-  "name": "FIDO R2 for Home Assistant"
+  "name": "FIDO R2 for Home Assistant",
+  "hide_default_branch": true
 }
