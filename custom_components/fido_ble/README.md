@@ -1,10 +1,8 @@
 # FIDO R2 for Home Assistant
 
-[![Open the repository in Home Assistant](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=s0ftice&repository=ha-fido-r2&category=integration)
-
 ![YEEUU FIDO R2 smart door handle](https://raw.githubusercontent.com/s0ftice/ha-fido-r2/main/images/fido-r2.jpg)
 
-Control a YEEUU / FIDO R2 smart lock locally over Bluetooth from Home Assistant. The lock may also appear as **R1 Smart Lock** in Tuya apps. The integration was developed with one YouJia **YSR3711**, product ID `jiqwweph`, using Tuya BLE protocol 2.0. Compatibility with other hardware is not established.
+Unlock and monitor a YEEUU / FIDO R2 smart lock with 100% local, cloud-free operation over Bluetooth from Home Assistant. A connectable Bluetooth adapter or proxy is required, but the official YEEUU H1 Wi-Fi/Bluetooth gateway is not. Optional account-assisted setup contacts Tuya once to retrieve the lock credentials; manual setup can use credentials you already have. The lock may also appear as **R1 Smart Lock** in Tuya apps. The integration was developed with one YouJia **YSR3711**, product ID `jiqwweph`, using Tuya BLE protocol 2.0. Compatibility with other hardware is not established.
 
 This is an early project. The account setup and automatic adapter selection in this repository are not yet verified end to end in Home Assistant. The original direct unlock and fingerprint reporting have been tested on one lock. [YEEUU product page](https://www.yeeuu.com/collections/smart-lever-knob-handle-latch-lock/products/r2-fido-smart-lock) · [Original FIDO Indiegogo campaign](https://www.indiegogo.com/projects/fido-the-safest-and-most-minimalist-smart-lock)
 
@@ -22,13 +20,17 @@ An acknowledgment means the lock accepted a request; it doesn't prove the door m
 
 1. Set up the lock in one of the compatible mobile apps first. For iPhone: [YEEUU](https://apps.apple.com/sg/app/yeeuu/id1484451131), [Smart Life](https://apps.apple.com/sg/app/smart-life-smart-living/id1115101477), or [Tuya Smart](https://apps.apple.com/sg/app/tuya-smart/id1034649547). App availability varies by region.
 2. Android versions of these apps are expected to work similarly, but Android setup has not been tested with this integration.
-3. Make sure Home Assistant has a **connectable** Bluetooth adapter or active Bluetooth proxy within range of the lock. A passive-only proxy cannot make the connection. Once set up, the integration operates locally; an H1 gateway and internet connection are not required for normal use.
+3. Make sure Home Assistant has a **connectable** Bluetooth adapter or active Bluetooth proxy within range of the lock. A passive-only proxy cannot make the connection. See [ESPHome’s Bluetooth proxy projects](https://esphome.io/projects/?type=bluetooth) for compatible hardware and setup. Once set up, the integration operates locally; an H1 gateway and internet connection are not required for normal use.
+   **TODO:** Add a specific recommended Bluetooth proxy and purchase link after testing.
+
 4. For account-assisted setup, have the account email or phone number, password, and the **country calling code for the account's registered region** ready. For example, Singapore is `65`. You need internet access for this one-time lookup. Account sign-in by Apple or Google, MFA or CAPTCHA is not supported by this setup flow; use manual setup if required.
 5. Do not reset or unpair a working lock just to install this integration.
 
 ## Install
 
 The repository can be installed as a **custom repository** through HACS, or through the Home Assistant Marketplace on versions that provide it. The button opens the repository in your own Home Assistant; it does not install anything until you confirm there.
+
+[![Open the repository in Home Assistant](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=s0ftice&repository=ha-fido-r2&category=integration)
 
 1. Select the **Open the repository in Home Assistant** button above. If prompted, enter the address of your Home Assistant instance into My Home Assistant.
 2. In HACS or Marketplace, add the repository as a custom **Integration** if asked, then select **Download** or **Install**.
