@@ -4,9 +4,7 @@
 
 ![YEEUU FIDO R2 smart door handle](https://raw.githubusercontent.com/s0ftice/ha-fido-r2/main/images/fido-r2.jpg)
 
-*Photo: [YEEUU](https://www.yeeuu.com/collections/smart-lever-knob-handle-latch-lock/products/r2-fido-smart-lock).*
-
-Control a YEEUU / FIDO R2 smart lock locally over Bluetooth from Home Assistant. The lock may also appear as **R1 Smart Lock** in Tuya apps. The integration was developed with one YouJia **YSR3711**, product ID `jiqwweph`, firmware 1.0.4, using Tuya BLE protocol 2.0. Compatibility with other hardware and firmware is not established.
+Control a YEEUU / FIDO R2 smart lock locally over Bluetooth from Home Assistant. The lock may also appear as **R1 Smart Lock** in Tuya apps. The integration was developed with one YouJia **YSR3711**, product ID `jiqwweph`, using Tuya BLE protocol 2.0. Compatibility with other hardware is not established.
 
 This is an early project. The account setup and automatic adapter selection in this repository are not yet verified end to end in Home Assistant. The original direct unlock and fingerprint reporting have been tested on one lock. [YEEUU product page](https://www.yeeuu.com/collections/smart-lever-knob-handle-latch-lock/products/r2-fido-smart-lock) · [Original FIDO Indiegogo campaign](https://www.indiegogo.com/projects/fido-the-safest-and-most-minimalist-smart-lock)
 
