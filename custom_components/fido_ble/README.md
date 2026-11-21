@@ -2,7 +2,7 @@
 
 [![Open the repository in Home Assistant](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=s0ftice&repository=ha-fido-r2&category=integration)
 
-![YEEUU FIDO R2 smart door handle](https://www.yeeuu.com/cdn/shop/products/R250_2.jpg?v=1684736807&width=1200)
+![YEEUU FIDO R2 smart door handle](https://raw.githubusercontent.com/s0ftice/ha-fido-r2/main/images/fido-r2.png)
 
 *Photo: [YEEUU](https://www.yeeuu.com/collections/smart-lever-knob-handle-latch-lock/products/r2-fido-smart-lock).*
 
