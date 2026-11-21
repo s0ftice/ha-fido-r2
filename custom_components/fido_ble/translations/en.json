@@ -1,0 +1,85 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "FIDO BLE Unlock",
+        "description": "Choose how to obtain the lock local key.",
+        "data": {
+          "method": "Local key setup"
+        }
+      },
+      "reconfigure": {
+        "title": "Configure FIDO BLE Unlock",
+        "description": "Update lock settings. Leave the local key blank to keep the existing key.",
+        "data": {
+          "address": "Lock Bluetooth address",
+          "device_id": "Tuya device ID",
+          "device_uuid": "Tuya device UUID",
+          "local_key": "New local key (optional)",
+          "member_id": "Bluetooth unlock member ID",
+          "fingerprint_names": "Fingerprint names (JSON mapping of ID to name)",
+          "initial_fingerprint_id": "Import initial fingerprint ID (optional; empty history only)",
+          "initial_fingerprint_time": "Import unlock time (ISO 8601 with timezone; optional)"
+        }
+      },
+      "manual": {
+        "title": "FIDO BLE Unlock",
+        "description": "Enter the lock credentials and member ID. Home Assistant chooses a connectable Bluetooth adapter automatically.",
+        "data": {
+          "address": "Lock Bluetooth address",
+          "device_id": "Tuya device ID",
+          "device_uuid": "Tuya device UUID",
+          "local_key": "Lock local key",
+          "member_id": "Bluetooth unlock member ID",
+          "fingerprint_names": "Fingerprint names (JSON mapping of ID to name)"
+        }
+      },
+      "account": {
+        "title": "Retrieve lock key",
+        "description": "Sign in to the selected app account. Your password is used only during setup and is not saved. The integration looks for supported locks.",
+        "data": {
+          "account": "Email address or phone number",
+          "password": "Account password",
+          "country_code": "Account country calling code"
+        }
+      },
+      "select_lock": {
+        "title": "Choose a lock",
+        "description": "Select the FIDO R2 to add.",
+        "data": {
+          "device": "Lock"
+        }
+      }
+    },
+    "error": {
+      "invalid_address": "Enter a valid lock Bluetooth address.",
+      "invalid_credentials": "The device ID, UUID and local key must each contain 16 ASCII characters.",
+      "address_in_use": "Another FIDO lock integration already uses this lock address.",
+      "invalid_member": "Enter a whole number between 1 and 100.",
+      "invalid_fingerprint_names": "Enter a JSON object mapping fingerprint IDs to names.",
+      "invalid_fingerprint_seed": "Enter both a valid fingerprint ID and an ISO timestamp with timezone.",
+      "invalid_account_details": "Enter your account and numeric country calling code.",
+      "device_id_changed": "The device ID must match the lock used for the key lookup.",
+      "account_auth": "Account sign-in was rejected. Check the selected app and account details.",
+      "account_verification": "This login requires verification that is not supported here. Use manual setup.",
+      "account_device": "The lock was not found in this account.",
+      "account_locked": "The account may be locked. Check the app before trying again.",
+      "account_lookup": "Unable to retrieve the key. Check the account, network, and device ID or use manual setup.",
+      "account_no_locks": "No supported lock was found. Confirm it is linked to this account, or use manual setup."
+    },
+    "abort": {
+      "already_configured": "This lock is already configured.",
+      "account_lookup_failed": "Could not retrieve this lock’s credentials. Try again or use manual setup."
+    },
+    "selector": {
+      "method": {
+        "options": {
+          "manual": "I already know the local key",
+          "smart_life": "Retrieve using Smart Life account",
+          "tuya_smart": "Retrieve using Tuya Smart account",
+          "yeeuu": "Retrieve using YEEUU/Ujia account"
+        }
+      }
+    }
+  }
+}

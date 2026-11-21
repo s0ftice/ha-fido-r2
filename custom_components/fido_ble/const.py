@@ -1,0 +1,10 @@
+"""Constants for the local FIDO BLE unlock integration."""
+DOMAIN = "fido_ble"
+CONF_ADDRESS = "address"
+CONF_ADAPTER = "adapter"
+CONF_DEVICE_ID = "device_id"
+CONF_UUID = "device_uuid"
+CONF_LOCAL_KEY = "local_key"
+CONF_MEMBER_ID = "member_id"
+
+CONF_FINGERPRINT_NAMES = "fingerprint_names"
