@@ -46,7 +46,7 @@ The integration uses `tuya-ble-sdk==0.1.4` and `tuya-mobile==1.2.0`, which Home 
 2. Enter the app account email or phone number, password, and account country calling code. The password is used for the lookup and is not saved in the integration configuration.
 3. The integration searches for the known FIDO R2 product ID. If it finds one lock, it selects it; if it finds several, select yours. If no compatible lock is found, check the account and use manual setup if necessary. Device listing may omit shared locks or devices with a different product ID.
 4. Review the displayed lock Bluetooth address, device ID and UUID. When available, these are filled from the account response; the lock's Bluetooth address is derived by reversing the Tuya-reported MAC bytes. If an item is missing, enter it manually. Home Assistant selects a connectable adapter automatically.
-5. Enter the **Bluetooth unlock member ID**. The default is `1`, which worked in our test, but its meaning on other devices is not established.
+5. Enter the **Bluetooth unlock member ID**. The default is `1`.
 6. Optionally enter fingerprint names as a JSON object, for example `{"1": "Alex", "4": "Sam"}`. Use `{}` if you don't know the slot IDs yet. Select **Submit**.
 7. Open the FIDO R2 device page. Test **Prepare connection**, then press **Unlock** while you can observe the door.
 
