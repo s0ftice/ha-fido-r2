@@ -45,7 +45,12 @@ class FidoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             return await self.async_step_account()
         return self.async_show_form(step_id='user', data_schema=vol.Schema({
             vol.Required('method'): selector.SelectSelector(selector.SelectSelectorConfig(
-                options=['manual', 'smart_life', 'tuya_smart', 'yeeuu'], translation_key='method')),
+                options=[
+                    selector.SelectOptionDict(value='manual', label='I already know the local key'),
+                    selector.SelectOptionDict(value='smart_life', label='Smart Life'),
+                    selector.SelectOptionDict(value='tuya_smart', label='Tuya Smart'),
+                    selector.SelectOptionDict(value='yeeuu', label='YEEUU/Ujia'),
+                ])),
         }))
 
     async def async_step_account(self, user_input=None):
