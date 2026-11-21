@@ -17,10 +17,6 @@ class FingerprintHistory:
     async def async_load(self):
         data = await self.store.async_load() or {}
         self.records = data.get('records', [])[-500:]
-        seed = self.entry.data.get('fingerprint_seed')
-        if not self.records and seed:
-            self.records = [dict(seed, imported=True)]
-            await self.store.async_save({'records': self.records})
 
     async def async_record(self, slot, timestamp):
         if isinstance(slot, bool) or not isinstance(slot, int) or not isinstance(timestamp, (int, float)) or timestamp <= 0:

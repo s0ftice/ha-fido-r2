@@ -2,7 +2,6 @@
 from __future__ import annotations
 import re
 import json
-from datetime import datetime
 import voluptuous as vol
 from homeassistant import config_entries
 from homeassistant.helpers import selector
@@ -205,18 +204,7 @@ class FidoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     CONF_DEVICE_ID: device_id, CONF_UUID: uuid,
                     CONF_LOCAL_KEY: key, CONF_MEMBER_ID: int(member), CONF_FINGERPRINT_NAMES: names,
                 }
-                seed_id = user_input.get('initial_fingerprint_id', '').strip()
-                seed_time = user_input.get('initial_fingerprint_time', '').strip()
-                if seed_id or seed_time:
-                    try:
-                        dt = datetime.fromisoformat(seed_time)
-                        if not seed_id.isdecimal() or not 0 <= int(seed_id) <= 255 or dt.tzinfo is None:
-                            raise ValueError('invalid initial record')
-                        updates['fingerprint_seed'] = {'slot': int(seed_id), 'timestamp': dt.timestamp()}
-                    except ValueError:
-                        errors['base'] = 'invalid_fingerprint_seed'
-                if not errors:
-                    return self.async_update_reload_and_abort(entry, data_updates=updates)
+                return self.async_update_reload_and_abort(entry, data_updates=updates)
         values = user_input or entry.data
         schema = vol.Schema({
             vol.Required(CONF_ADDRESS, default=values[CONF_ADDRESS]): str,
@@ -225,7 +213,5 @@ class FidoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             vol.Optional(CONF_LOCAL_KEY): PASSWORD,
             vol.Required(CONF_MEMBER_ID, default=values[CONF_MEMBER_ID]): MEMBER_NUMBER,
             vol.Optional(CONF_FINGERPRINT_NAMES, default=(values.get(CONF_FINGERPRINT_NAMES, '{}') if isinstance(values.get(CONF_FINGERPRINT_NAMES, '{}'), str) else json.dumps(values.get(CONF_FINGERPRINT_NAMES, {}), ensure_ascii=False))): str,
-            vol.Optional('initial_fingerprint_id'): str,
-            vol.Optional('initial_fingerprint_time'): str,
         })
         return self.async_show_form(step_id="reconfigure", data_schema=schema, errors=errors)

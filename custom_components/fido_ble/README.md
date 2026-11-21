@@ -60,9 +60,9 @@ The device ID is often shown in the mobile app's device information. The UUID an
 
 ## Reconfigure and history
 
-Open **Settings → Devices & services → FIDO BLE Unlock → Reconfigure** to update the lock details or fingerprint names. Leave the replacement local-key field blank to keep the existing key. The form can also import an initial fingerprint ID and an ISO 8601 timestamp with timezone when history is empty.
+Open **Settings → Devices & services → FIDO BLE Unlock → Reconfigure** to update the lock details or fingerprint names. Leave the replacement local-key field blank to keep the existing key.
 
-Fingerprint IDs, names and timestamps describe household activity and are stored locally in Home Assistant. Protect backups and do not publish keys, packet captures or real household identifiers.
+Fingerprint IDs, names and timestamps describe household activity and are stored locally in Home Assistant.
 
 ## Credits and license
 

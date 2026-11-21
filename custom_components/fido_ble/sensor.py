@@ -18,17 +18,6 @@ class FingerprintSensor(SensorEntity):
         self._attr_unique_id = f'{entry.unique_id}_last_fingerprint_unlock'
         self._attr_device_info = {'identifiers': {(DOMAIN, entry.unique_id)}, 'name': 'FIDO R2', 'manufacturer': 'YouJia', 'model': 'YSR3711'}
 
-    async def async_added_to_hass(self):
-        await super().async_added_to_hass()
-        latest = self.history.latest
-        if latest and latest.get('imported') and not latest.get('import_logged'):
-            from homeassistant.util import dt as dt_util
-            name = self.native_value
-            when = dt_util.as_local(datetime.fromtimestamp(latest['timestamp'], timezone.utc)).isoformat(timespec='seconds')
-            await self.hass.services.async_call('logbook', 'log', {'name': 'Fingerprint unlock', 'message': f'{name} used a fingerprint at {when} (imported)', 'entity_id': self.entity_id}, blocking=True)
-            latest['import_logged'] = True
-            await self.history.store.async_save({'records': self.history.records})
-
     @property
     def native_value(self):
         latest = self.history.latest
@@ -41,4 +30,4 @@ class FingerprintSensor(SensorEntity):
         latest = self.history.latest
         if not latest:
             return {}
-        return {'fingerprint_id': latest['slot'], 'unlocked_at': datetime.fromtimestamp(latest['timestamp'], timezone.utc).isoformat(), 'imported': latest.get('imported', False), 'recent_records': [{'fingerprint_id': r['slot'], 'name': self.entry.data.get(CONF_FINGERPRINT_NAMES, {}).get(str(r['slot'])), 'unlocked_at': datetime.fromtimestamp(r['timestamp'], timezone.utc).isoformat(), 'imported': r.get('imported', False)} for r in self.history.records[-50:]]}
+        return {'fingerprint_id': latest['slot'], 'unlocked_at': datetime.fromtimestamp(latest['timestamp'], timezone.utc).isoformat(), 'recent_records': [{'fingerprint_id': r['slot'], 'name': self.entry.data.get(CONF_FINGERPRINT_NAMES, {}).get(str(r['slot'])), 'unlocked_at': datetime.fromtimestamp(r['timestamp'], timezone.utc).isoformat()} for r in self.history.records[-50:]]}

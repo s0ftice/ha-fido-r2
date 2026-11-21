@@ -17,9 +17,7 @@
           "device_uuid": "Tuya device UUID",
           "local_key": "New local key (optional)",
           "member_id": "Bluetooth unlock member ID",
-          "fingerprint_names": "Fingerprint names (JSON mapping of ID to name)",
-          "initial_fingerprint_id": "Import initial fingerprint ID (optional; empty history only)",
-          "initial_fingerprint_time": "Import unlock time (ISO 8601 with timezone; optional)"
+          "fingerprint_names": "Fingerprint names (JSON mapping of ID to name)"
         }
       },
       "manual": {
@@ -57,7 +55,6 @@
       "address_in_use": "Another FIDO lock integration already uses this lock address.",
       "invalid_member": "Enter a whole number between 1 and 100.",
       "invalid_fingerprint_names": "Enter a JSON object mapping fingerprint IDs to names.",
-      "invalid_fingerprint_seed": "Enter both a valid fingerprint ID and an ISO timestamp with timezone.",
       "invalid_account_details": "Enter your account and numeric country calling code.",
       "device_id_changed": "The device ID must match the lock used for the key lookup.",
       "account_auth": "Account sign-in was rejected. Check the selected app and account details.",
