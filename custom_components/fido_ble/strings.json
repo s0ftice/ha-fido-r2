@@ -36,9 +36,9 @@
         "title": "Retrieve lock key",
         "description": "Sign in to the selected app account. Your password is used only during setup and is not saved. The integration looks for supported locks.",
         "data": {
-          "account": "Email address or phone number",
+          "account": "Email address",
           "password": "Account password",
-          "country_code": "Account country calling code"
+          "country_code": "Region code (e.g., 65 for Singapore)"
         }
       },
       "select_lock": {
@@ -55,7 +55,7 @@
       "address_in_use": "Another FIDO lock integration already uses this lock address.",
       "invalid_member": "Enter a whole number between 1 and 100.",
       "invalid_fingerprint_names": "Enter a JSON object mapping fingerprint IDs to names.",
-      "invalid_account_details": "Enter your account and numeric country calling code.",
+      "invalid_account_details": "Enter your email address and numeric region code.",
       "device_id_changed": "The device ID must match the lock used for the key lookup.",
       "account_auth": "Account sign-in was rejected. Check the selected app and account details.",
       "account_verification": "This login requires verification that is not supported here. Use manual setup.",
