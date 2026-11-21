@@ -12,9 +12,7 @@ This is an early project. The account setup and automatic adapter selection in t
 - **Prepare connection** connects in advance and keeps the session for up to 60 seconds, so a subsequent unlock can be faster. Press it again to renew the window.
 - **Last fingerprint unlock** shows the name of the most recently received fingerprint record. Its attributes include the slot ID, the lock-reported time and recent records.
 
-Fingerprint records are received during authenticated Bluetooth sessions, including records queued while disconnected. The integration tracks up to 500 recent ID-and-timestamp pairs to suppress duplicates and creates an Activity entry for each new record. The Activity time is when Home Assistant processed the record; the message includes the lock-reported time. Home Assistant Recorder settings control retention.
-
-An acknowledgment means the lock accepted a request; it doesn't prove the door moved. If the outcome is unconfirmed, check the door before retrying. The fingerprint sensor reports an unlock, not whether someone entered or left. There is no door-position sensor or verified lock command.
+Fingerprint records are received during authenticated Bluetooth sessions, including records queued while disconnected.
 
 ## Before you begin
 
