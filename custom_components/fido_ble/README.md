@@ -16,13 +16,12 @@ Fingerprint records are received during authenticated Bluetooth sessions, includ
 
 ## Before you begin
 
-1. Set up the lock in one of the compatible mobile apps first. For iPhone: [YEEUU](https://apps.apple.com/sg/app/yeeuu/id1484451131), [Smart Life](https://apps.apple.com/sg/app/smart-life-smart-living/id1115101477), or [Tuya Smart](https://apps.apple.com/sg/app/tuya-smart/id1034649547). App availability varies by region.
-2. Android versions of these apps are expected to work similarly, but Android setup has not been tested with this integration.
-3. Make sure Home Assistant has a **connectable** Bluetooth adapter or active Bluetooth proxy within range of the lock. A passive-only proxy cannot make the connection. See [ESPHome’s Bluetooth proxy projects](https://esphome.io/projects/?type=bluetooth) for compatible hardware and setup. Once set up, the integration operates locally; an H1 gateway and internet connection are not required for normal use.
+1. Set up the lock in one of the compatible mobile apps first. For iPhone: [YEEUU](https://apps.apple.com/sg/app/yeeuu/id1484451131), [Smart Life](https://apps.apple.com/sg/app/smart-life-smart-living/id1115101477), or [Tuya Smart](https://apps.apple.com/sg/app/tuya-smart/id1034649547). App availability varies by region. Android versions are expected to work similarly, but Android setup has not been tested with this integration.
+2. Make sure Home Assistant has a **connectable** Bluetooth adapter or active Bluetooth proxy within range of the lock. A passive-only proxy cannot make the connection. See [ESPHome’s Bluetooth proxy projects](https://esphome.io/projects/?type=bluetooth) for compatible hardware and setup. Once set up, the integration operates locally; an H1 gateway and internet connection are not required for normal use.
    **TODO:** Add a specific recommended Bluetooth proxy and purchase link after testing.
 
-4. For account-assisted setup, have the account email or phone number, password, and the **country calling code for the account's registered region** ready. For example, Singapore is `65`. You need internet access for this one-time lookup. Account sign-in by Apple or Google, MFA or CAPTCHA is not supported by this setup flow; use manual setup if required.
-5. Do not reset or unpair a working lock just to install this integration.
+3. For account-assisted setup, have the account email or phone number, password, and the **country calling code for the account's registered region** ready. For example, Singapore is `65`. You need internet access for this one-time lookup. Account sign-in by Apple or Google, MFA or CAPTCHA is not supported by this setup flow; use manual setup if required.
+4. Do not reset or unpair a working lock just to install this integration.
 
 ## Install
 
