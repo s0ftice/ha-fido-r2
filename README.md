@@ -50,8 +50,6 @@ The integration uses `tuya-ble-sdk==0.1.4` and `tuya-mobile==1.2.0`, which Home 
 6. Optionally enter fingerprint names as a JSON object, for example `{"1": "Alex", "4": "Sam"}`. Use `{}` if you don't know the slot IDs yet. Select **Submit**.
 7. Open the FIDO R2 device page. Test **Prepare connection**, then press **Unlock** while you can observe the door.
 
-The Tuya Smart account lookup returned the correct key for the tested lock. Smart Life and YEEUU account sign-in have been tested, but their full lock-credential lookup and accounts without an H1 gateway have not been verified. The Home Assistant account setup itself has not yet been tested end to end. Do not post credentials or account responses in issues.
-
 ### Option B: Enter the credentials manually
 
 1. Choose **I already know the local key**.
