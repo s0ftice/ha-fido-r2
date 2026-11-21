@@ -66,4 +66,10 @@ Fingerprint IDs, names and timestamps describe household activity and are stored
 
 ## Credits and license
 
-Built with help from [OpenAI Codex](https://openai.com/codex/). The Raspberry Pi credential lookup test script was adapted from [Noneawe's `get_local_key.py`](https://github.com/Noneawe/tuya-ble-esphome-battery/blob/main/tools/get_local_key.py). Uses [tuya-ble-sdk](https://github.com/roquerodrigo/tuya-ble-sdk) and [tuya-mobile](https://github.com/AboveColin/tuya-mobile), both MIT licensed. This integration is distributed under the [MIT License](https://github.com/s0ftice/ha-fido-r2/blob/main/LICENSE).
+Built with help from [OpenAI Codex](https://openai.com/codex/).
+
+The configuration script was adapted from [Noneawe's `get_local_key.py`](https://github.com/Noneawe/tuya-ble-esphome-battery/blob/main/tools/get_local_key.py).
+
+This integration uses [tuya-ble-sdk](https://github.com/roquerodrigo/tuya-ble-sdk) and [tuya-mobile](https://github.com/AboveColin/tuya-mobile), both MIT licensed.
+
+This integration is distributed under the [MIT License](https://github.com/s0ftice/ha-fido-r2/blob/main/LICENSE).
